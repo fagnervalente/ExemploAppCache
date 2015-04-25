@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html manifast="/configCache.appcache">
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Você está na página inicial</h1>
+    <p>Página inicial chamada pelo servidor</p>
+
+    <img src="/images/404.jpg" alt="">
+
+    <iframe src="cache/start.html" frameborder="0" ></iframe>
+  </body>
+</html>

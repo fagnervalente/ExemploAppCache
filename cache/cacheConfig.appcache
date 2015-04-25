@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#HASH 2
+
+/cache/offline.html
+/cache/scripts/mainCache.js
+/cache/scripts/jquery-1.11.2.min.js
+
+NETWORK:
+*
+
+FALLBACK:
+/ /cache/indisponivel.html
+*.jpg /images/default.jpg
