@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var ping = require('./routes/ping');
-var cacheconfig = require('./routes/cacheconfig');
+var manifest = require('./routes/manifest');
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use('/cache', express.static('cache', { 'cache-control': 'no-cache' }));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/configCache.appcache', cacheconfig);
+app.use('/manifest.appcache', manifest);
 app.use('/ping', ping);
 
 // catch 404 and forward to error handler

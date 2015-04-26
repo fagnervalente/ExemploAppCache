@@ -11,6 +11,7 @@ appCache.url.offline = appCache.url.base + 'cache/offline.html';
 appCache.INTERVAL_TIME = 3000;
 appCache.isServerOnline = false;
 
+
 appCache.startCheckStatusApp = function(){
 
 	appCache.checkStatusApp( appCache.setServerOn, appCache.setServerOff, appCache.setClientConnectionOff );

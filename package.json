@@ -14,5 +14,10 @@
     "debug": "~2.0.0",
     "hjs": "~0.0.6",
     "less-middleware": "1.0.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-manifest": "~0.4.0"
   }
 }
