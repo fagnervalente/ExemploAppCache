@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" manifest="/configCache.appcache">
 <head>
 	<meta charset="UTF-8">
 	<title>Indisponível</title>
-	<script type="text/javascript" src="scripts/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="scripts/mainCache.js"></script>
+	<script type="text/javascript" src="/cache/scripts/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/cache/scripts/mainCache.js"></script>
 	<script>
-		appCache.checkStatusApp(false);
+		appCache.startCheckStatusApp();
 	</script>
 </head>
 <body>
 	<h1>O serviço encontra-se indisponível no momento</h1>
 	<hr>
+	<p>Desculpe o transtorno</p>
+	
 </body>
 </html>
