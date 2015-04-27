@@ -28,32 +28,30 @@ appCache.setServerOn = function(online){
 		window.parent.location = appCache.url.server;
 };
 appCache.setServerOff = function(online){
-	appCache.isServerOnline = false;
-	if ( window.parent.location.href != appCache.url.indisponivel)
-		window.parent.location = appCache.url.indisponivel;
+	if (appCache.isOnline()) {
+		appCache.isServerOnline = false;
+		if ( window.parent.location.href != appCache.url.indisponivel)
+			window.parent.location = appCache.url.indisponivel;
+	}else{
+		appCache.setClientConnectionOff();
+	}
 };
 appCache.setClientConnectionOff = function(){
 	if (window.parent.location.href != appCache.url.offline)
 		window.parent.location = appCache.url.offline;
 };
-appCache.checkStatusApp = function(callback_online, callback_offiline, callback_client_connection_off){
+appCache.checkStatusApp = function(callback_online, callback_offiline){
 
 	callback_online = typeof(callback_online) === 'function' ? callback_online : new Function();
 	callback_offiline = typeof(callback_offiline) === 'function' ? callback_offiline : new Function();
-	callback_client_connection_off = typeof(callback_client_connection_off) === 'function' ? callback_client_connection_off : new Function();
 
-	if (appCache.isOnline())
-	{
-		$.ajax({
-			url: 'http://localhost:3000/ping',
-			dataType: 'JSON',
-			success: callback_online,
-			error: callback_offiline
-		});
+	$.ajax({
+		url: 'http://localhost:3000/ping',
+		dataType: 'JSON',
+		success: callback_online,
+		error: callback_offiline
+	});
 
-	}else{
-		callback_client_connection_off();
-	}
 };
 appCache.isOnline = function(){
 

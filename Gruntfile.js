@@ -9,24 +9,32 @@ module.exports = function (grunt) {
                 options: {
                     basePath: './',
                     fallback: [
-                        '/users cache/offline.html',
-                        '/public/images/* cache/images/default.png'],
+                        '/users /cache/indisponivel.html',
+                        '/images/ /cache/images/default.png'],
                     verbose: true,
-                    timestamp: true
+                    timestamp: true,
+                    preferOnline: true
                 },
                 src: [
                     'cache/*.html',
                     'cache/scripts/*.js',
                     'cache/stylesheets/*.css',
-                    'cache/images/default.png'
+                    'cache/images/*'
                 ],
                 dest: 'manifest.appcache'
+            }
+        },
+        watch: {
+            cache: {
+                files: ['cache/**/*', 'Gruntfile.js'], 
+                tasks: ['manifest']
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-manifest');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['manifest']);
+    grunt.registerTask('default', ['watch']);
 
 };

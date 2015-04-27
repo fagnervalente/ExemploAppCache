@@ -5,11 +5,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Você está na página inicial</h1>
-    <p>Página inicial chamada pelo servidor</p>
+    <div class="content-body"> 
+    <h1 class="title-giant">Olá!</h1>
+    <h1>Você é sempre bem vindo em nosso site!</h1>
+    <hr>
+    <img src="/images/happy.png" alt="Happy" class="center">
+  </div>
 
-    <img src="/images/def.jpg" alt="">
+    
 
-    <iframe src="cache/start.html" frameborder="0" ></iframe>
+    <iframe src="cache/start.html" frameborder="0" style="display: none;" ></iframe>
   </body>
 </html>
